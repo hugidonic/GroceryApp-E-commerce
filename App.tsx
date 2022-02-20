@@ -4,9 +4,11 @@ import AppNavigator from './src/routes/AppNavigator';
 
 import { LogBox } from 'react-native'
 import "react-native-gesture-handler"
+import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
+
 LogBox.ignoreAllLogs()
 
-export default function App() {
+const App = gestureHandlerRootHOC(() => {
   const [loaded] = useFonts({
     "Roboto-Regular": require('./src/assets/fonts/Roboto-Regular.ttf'),
     "Roboto-Bold": require('./src/assets/fonts/Roboto-Bold.ttf'),
@@ -19,11 +21,9 @@ export default function App() {
   }
   
   return (
-    // <SafeAreaView style={{paddingTop: 25}}>
-    <>
-      <AppNavigator />
-    </>
-    // </SafeAreaView>
+    <AppNavigator />
   );
-}
+})
+
+export default App;
 

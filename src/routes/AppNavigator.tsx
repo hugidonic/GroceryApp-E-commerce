@@ -23,7 +23,6 @@ import OrdersScreen from './../screens/orders/OrdersScreen';
 import MyDetailsScreen from './../screens/MyDetails/MyDetailsScreen';
 import ItemScreenHeader from '../screens/item/components/ItemScreenHeader';
 
-
 const MainStack = createNativeStackNavigator<MainStackParamListType>();
 const ProfileStack = createNativeStackNavigator<ProfileStackParamListType>();
 const TabsStack = createBottomTabNavigator<TabsStackParamListType>();
@@ -32,12 +31,12 @@ const AppNavigator = () => {
   return (
     <NavigationContainer>
 
-      <MainStack.Navigator screenOptions={{headerShown: false}}>
-        <MainStack.Screen name="TabsStack" component={BottomTabs} />
-        <MainStack.Screen name="ProfileStack" component={ProfileStackScreens}/>
-        <MainStack.Screen name="Item" options={ItemScreenOptions} component={ItemScreen}/>
-        <MainStack.Screen name="Group" options={{headerShown: true}} component={GroupScreen}/>
-      </MainStack.Navigator>
+        <MainStack.Navigator screenOptions={{headerShown: false}}>
+          <MainStack.Screen name="TabsStack" component={BottomTabs} />
+          <MainStack.Screen name="ProfileStack" component={ProfileStackScreens}/>
+          <MainStack.Screen name="Item" options={ItemScreenOptions} component={ItemScreen}/>
+          <MainStack.Screen name="Group" options={{headerShown: true}} component={GroupScreen}/>
+        </MainStack.Navigator>
       
     </NavigationContainer>
   )
