@@ -3,7 +3,7 @@ const colors = {
   lightenPrimary: "#DEFAE8",
   secondary: '#999999',
   black: "#333",  
-  white: "#F2F8FF",
+  white: "#EFF4FF",
   red: "#FF1D1C",
   lightenRed: "#FFE8E9"
 };

@@ -1,3 +1,4 @@
+// 
 import { FlatList, KeyboardAvoidingView, StyleSheet, ScrollView } from 'react-native';
 import React from 'react';
 // Custom components
@@ -5,7 +6,7 @@ import Block from '../../components/Block';
 import RText from '../../components/RText';
 // Components
 import SearchBar from './components/SearchBar';
-import BGBlock from './components/BGBlock';
+import BgSlider from './components/BgSlider';
 import ItemList from '../../components/ItemList';
 import data from './../../utils/data';
 import GroupsList from './components/GroupsList';
@@ -21,7 +22,8 @@ const HomeScreen = (props: Props) => {
 				
 				<SearchBar />
         {/* TODO: Make this a slider fadeinout thing */}
-				<BGBlock />
+				
+				<BgSlider />
 
 				<ItemList title="Fruits" data={data.fruits} />
 				<ItemList title="Vegetables" data={data.vegetables} />

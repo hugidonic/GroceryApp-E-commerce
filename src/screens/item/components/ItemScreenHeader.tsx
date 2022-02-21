@@ -4,10 +4,11 @@ import Block from '../../../components/Block';
 import { Entypo } from '@expo/vector-icons';
 import colors from './../../../utils/colors';
 
-import { NativeStackHeaderProps } from '@react-navigation/native-stack';
+type Props = {
+	goBack: () => void
+}
 
-const ItemScreenHeader = (props: NativeStackHeaderProps) => {
-	const nav = props.navigation;
+const ItemScreenHeader = ({goBack}: Props) => {
 	return (
 		<Block
 			style={styles.container}
@@ -16,7 +17,7 @@ const ItemScreenHeader = (props: NativeStackHeaderProps) => {
 			align="center"
       color={colors.white}
 		>
-			<Pressable onPress={() => nav.goBack()}>
+			<Pressable onPress={goBack}>
 				<Entypo name="chevron-left" size={30} color={colors.black} />
 			</Pressable>
 

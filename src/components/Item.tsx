@@ -16,8 +16,6 @@ const Item = ({ item }: Props) => {
 	const nav = useNavigation<ItemScreenProps['navigation']>();
 
 	const handleNavigation = () => {
-		console.log("Asdas");
-		
 		nav.navigate('Item', { item });
 	};
 	

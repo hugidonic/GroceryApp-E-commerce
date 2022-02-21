@@ -45,7 +45,7 @@ const AppNavigator = () => {
 export default AppNavigator;
 
 const ItemScreenOptions: ItemScreenOptionsType = {
-  headerShown: true,
+  headerShown: false,
   header: (props: NativeStackHeaderProps) => <ItemScreenHeader {...props} />,
 }
 

@@ -1,18 +1,18 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import Block from './../../../components/Block';
 
 type Props = {};
 
-const BGBlock = (props: Props) => {
+const BgSlider = (props: Props) => {
 	return (
-		<Image
-			source={require('../../../assets/images/bg1.jpg')}
-			style={styles.cover}
-		/>
+		<Block border>
+
+		</Block>
 	);
 };
 
-export default BGBlock;
+export default BgSlider;
 
 const styles = StyleSheet.create({
   cover: {
