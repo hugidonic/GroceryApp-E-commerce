@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Pressable, TouchableOpacity } from 'react-native';
 import React from 'react';
-import Block from './../../../components/Block';
+import Block from '../../../components/Block/Block';
 import { Ionicons, SimpleLineIcons } from '@expo/vector-icons';
 import colors from './../../../utils/colors';
 import RText from './../../../components/RText';
@@ -27,13 +27,15 @@ const ProfileListItem = ({ title, iconName, iconType, func }: Props) => {
 			<Block row align="center" style={styles.container}>
 				{iconType == 'Ionicons' ? (
 					<Ionicons
-						name={iconName}
-						size={ICONSIZE}
-						color={colors.black}
-						style={{ marginRight: 15 }}
+					// @ts-ignore
+					name={iconName}
+					size={ICONSIZE}
+					color={colors.black}
+					style={{ marginRight: 15 }}
 					/>
-				) : (
-					<SimpleLineIcons
+					) : (
+						<SimpleLineIcons
+						// @ts-ignore
 						name={iconName}
 						size={ICONSIZE}
 						color={colors.black}

@@ -2,7 +2,7 @@ import { StyleSheet, FlatList } from 'react-native';
 import React from 'react';
 import data from '../utils/data';
 import CartItem from '../screens/cart/components/CartItem';
-import Block from './Block';
+import Block from './Block/Block';
 
 type Props = {};
 

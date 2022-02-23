@@ -1,7 +1,7 @@
 import { Alert, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import React from 'react';
-import Block from './Block';
+import Block from './Block/Block';
 import RText from './RText';
 import colors from './../utils/colors';
 import { ItemI } from '../redux/reduxTypes';
@@ -10,17 +10,24 @@ import { ItemScreenProps } from '../routes/routeTypes';
 
 type Props = {
 	item: ItemI;
+	flex?: boolean;
 };
 
-const Item = ({ item }: Props) => {
+const Item = ({ item, flex }: Props) => {
 	const nav = useNavigation<ItemScreenProps['navigation']>();
 
 	const handleNavigation = () => {
 		nav.navigate('Item', { item });
 	};
-	
+
 	return (
-		<Block shadow color="#fff" bRadius={20} style={styles.container}>
+		<Block
+			shadow
+			color="#fff"
+			bRadius={20}
+			flex={flex}
+			style={styles.container}
+		>
 			<TouchableOpacity
 				onPress={handleNavigation}
 				style={{ flex: 1, padding: 12 }}
@@ -63,7 +70,7 @@ export default Item;
 const styles = StyleSheet.create({
 	container: {
 		// padding: 12,
-		marginVertical: 20
+		// marginVertical: 20,
 	},
 	shadow: {
 		shadowColor: '#000',

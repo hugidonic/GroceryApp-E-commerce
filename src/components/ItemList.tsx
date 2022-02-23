@@ -1,7 +1,7 @@
 import { Dimensions, FlatList, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 // Custom components
-import Block from './Block';
+import Block from './Block/Block';
 import RText from './RText';
 // Components
 import colors from '../utils/colors';

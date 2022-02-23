@@ -1,7 +1,21 @@
-const data = {
+import { GroupI, ItemI } from "../redux/reduxTypes";
+
+interface data {
+  groups: GroupI[];
+  fruits: ItemI[];
+  vegetables: ItemI[];
+  Diary: ItemI[];
+  Oils: ItemI[];
+  Drinks: ItemI[];
+  Rice: ItemI[];
+  Sauces: ItemI[];
+}
+
+
+const data: data = {
   groups: [
     {
-      name: "Dairy&Eggs",
+      name: "Dairy",
       color: "#F7B2BD",
       picture: require("../assets/images/Milk.png")
     },
@@ -36,18 +50,18 @@ const data = {
       picture: require("../assets/images/Sauces.png")
     },
     {
-      name: "Dairy&Eggs",
+      name: "Dairy",
       color: "#F7B2BD",
       picture: require("../assets/images/Milk.png")
     },
 
     {
-      name: "Dairy&Eggs",
+      name: "Dairy",
       color: "#F7B2BD",
       picture: require("../assets/images/Milk.png")
     },
     {
-      name: "Dairy&Eggs",
+      name: "Dairy",
       color: "#F7B2BD",
       picture: require("../assets/images/Milk.png")
     },
@@ -122,7 +136,18 @@ const data = {
       picture: require("../assets/images/Carrots.png"),
       price: 4.99
     },
-  ]
+  ],
+  Diary: [],
+  Oils: [],
+  Drinks: [],
+  Rice: [],
+  Sauces: [],
 }
+
+data.Diary = [...data.fruits];
+data.Oils = [...data.vegetables];
+data.Drinks = [...data.fruits];
+data.Rice = [...data.vegetables];
+data.Sauces = [...data.fruits];
 
 export default data

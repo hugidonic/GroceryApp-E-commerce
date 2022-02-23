@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import {FontAwesome} from '@expo/vector-icons'
 import React from 'react';
-import Block from './../../../components/Block';
+import Block from '../../../components/Block/Block';
 import colors from './../../../utils/colors';
 
 type Props = {};

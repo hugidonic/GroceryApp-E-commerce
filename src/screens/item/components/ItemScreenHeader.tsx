@@ -1,6 +1,6 @@
 import { StyleSheet, Pressable } from 'react-native';
 import React from 'react';
-import Block from '../../../components/Block';
+import Block from '../../../components/Block/Block';
 import { Entypo } from '@expo/vector-icons';
 import colors from './../../../utils/colors';
 

@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, View, Pressable } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import React from 'react';
 import { ItemI } from '../../../redux/reduxTypes';
-import Block from '../../../components/Block';
+import Block from '../../../components/Block/Block';
 import RText from '../../../components/RText';
 import OperationButton from './OperationButton';
 import colors from './../../../utils/colors';

@@ -1,7 +1,7 @@
 import { Dimensions, Image, StyleSheet } from 'react-native';
 import { AntDesign, Ionicons } from '@expo/vector-icons';
 import React from 'react';
-import Block from '../../components/Block';
+import Block from '../../components/Block/Block';
 import RText from '../../components/RText';
 import { ItemScreenProps } from '../../routes/routeTypes';
 import colors from './../../utils/colors';

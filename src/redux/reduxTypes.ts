@@ -6,7 +6,14 @@ export interface ItemI {
 };
 
 export interface GroupI {
-  name: string;
+  name: GroupNamesType;
   color: string;
   picture: ReturnType<typeof require>;
 }
+
+export type GroupNamesType = 
+"Diary" |
+"Oils" |
+"Drinks" |
+"Rice" |
+"Sauces" 

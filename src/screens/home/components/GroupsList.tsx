@@ -1,14 +1,18 @@
+// Packages
 import {
 	Dimensions,
 	FlatList,
 	Image,
 	StyleSheet,
-	Text,
-	View
+	TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import Block from '../../../components/Block';
+import { useNavigation } from '@react-navigation/native';
+import { TabsStackScreenProps } from '../../../routes/routeTypes';
+// Components
+import Block from '../../../components/Block/Block';
 import RText from '../../../components/RText';
+// Utils
 import data from '../../../utils/data';
 import colors from './../../../utils/colors';
 
@@ -17,23 +21,29 @@ const { width } = Dimensions.get('screen');
 type Props = {};
 
 const GroupsList = (props: Props) => {
-	const renderItem = (item: {
+
+	const nav = useNavigation<TabsStackScreenProps>()
+	
+	const renderItem = (group: {
 		name: string;
 		color: string;
 		picture: ReturnType<typeof require>;
 	}) => (
-		<Block
+		<TouchableOpacity
+			onPress={() => nav.navigation.navigate('Group', {group: group.name})}
+		>
+			<Block
 			shadow
 			row
 			bRadius={12}
 			align="center"
 			justify="center"
 			style={styles.container}
-			color={item.color}
+			color={group.color}
 		>
 			<Block row align="center">
 				<Image
-					source={item.picture}
+					source={group.picture}
 					style={{
 						width: 80,
 						height: 80,
@@ -41,10 +51,11 @@ const GroupsList = (props: Props) => {
 					}}
 				/>
 				<RText bold large>
-					{item.name}
+					{group.name}
 				</RText>
 			</Block>
 		</Block>
+		</TouchableOpacity>
 	);
 
 	return (

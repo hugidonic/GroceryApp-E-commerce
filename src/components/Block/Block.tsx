@@ -1,22 +1,6 @@
-import { StyleSheet, Text, View, ViewStyle } from 'react-native';
+import { StyleSheet, View, ViewStyle } from 'react-native';
 import React from 'react';
-
-type Props = {
-	children?: React.ReactNode;
-	style?: ViewStyle;
-
-	justify?: 'center' | 'flex-start' | 'flex-end' | 'space-between';
-	align?: 'center' | 'flex-start' | 'flex-end' | 'stretch';
-
-	bRadius?: number;
-
-	row?: boolean;
-	flex?: boolean;
-	shadow?: boolean;
-	border?: boolean;
-
-	color?: string;
-};
+import BlockProps from './Block.props'
 
 const Block = ({
 	children,
@@ -28,11 +12,14 @@ const Block = ({
 	flex,
 	bRadius,
 	border,
-	color
-}: Props) => {
-	const styles = StyleSheet.flatten([
+	color,
+	marginHorizontal,
+	marginVertical,
+	paddingHorizontal,
+	paddingVertical,
+}: BlockProps) => {
+	const styles: ViewStyle = StyleSheet.flatten([
 		style,
-		row !== undefined && { flexDirection: 'row' },
 
 		flex !== undefined && { flex: 1 },
 		border !== undefined && { borderWidth: 1 },
@@ -40,6 +27,14 @@ const Block = ({
 		justify !== undefined && { justifyContent: justify },
 		align !== undefined && { alignItems: align },
 		color !== undefined && { backgroundColor: color },
+		row !== undefined && { flexDirection: 'row', },
+
+
+		paddingHorizontal !== undefined && { paddingHorizontal },
+		marginHorizontal !== undefined && { marginHorizontal },
+		paddingVertical !== undefined && { paddingVertical },
+		marginVertical !== undefined && { marginVertical },
+
 		shadow !== undefined && {
 			shadowColor: '#000',
 			shadowOffset: {

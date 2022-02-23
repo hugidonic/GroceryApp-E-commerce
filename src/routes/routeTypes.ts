@@ -1,7 +1,8 @@
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 import { RouteProp, NavigatorScreenParams, CompositeScreenProps } from '@react-navigation/native';
 import { NativeStackNavigationOptions, NativeStackScreenProps } from '@react-navigation/native-stack';
-import { ItemI } from '../redux/reduxTypes';
+import { GroupI, GroupNamesType, ItemI } from '../redux/reduxTypes';
+
 
 declare global {
   namespace ReactNavigation {
@@ -15,7 +16,9 @@ export type MainStackParamListType = {
   TabsStack: NavigatorScreenParams<TabsStackParamListType>;
   ProfileStack: NavigatorScreenParams<ProfileStackParamListType>;
   Item: {item: ItemI}
-  Group: undefined;
+
+  // PLOP SCREENS FOR Main
+  Group: {group: GroupNamesType};
 }
 
 export type TabsStackParamListType = {
@@ -24,6 +27,8 @@ export type TabsStackParamListType = {
   Cart: undefined;
   Favorite: undefined;
   Profile: undefined;
+
+  // PLOP SCREENS FOR Tabs
 }
 
 export type ProfileStackParamListType = {
@@ -35,12 +40,19 @@ export type ProfileStackParamListType = {
   Notifications: undefined;
   Help: undefined;
   About: undefined;
+
+  // PLOP SCREENS FOR Profile
+  
 }
 
 // Screen navigation props
 export type ProfileStackScreenProps = NativeStackScreenProps<
   MainStackParamListType,
   "ProfileStack"
+>
+export type TabsStackScreenProps = NativeStackScreenProps<
+  MainStackParamListType,
+  "TabsStack"
 >
 export type ItemScreenProps = NativeStackScreenProps<
   MainStackParamListType,

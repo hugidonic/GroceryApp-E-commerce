@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import colors from './../../utils/colors';
 // Components
 import RText from '../../components/RText';
-import Block from './../../components/Block';
+import Block from '../../components/Block/Block';
 import ProfileHeader from './components/ProfileHeader';
 import ProfileList from './components/ProfileList';
 import OutlineBtn from './../../components/OutlineBtn';

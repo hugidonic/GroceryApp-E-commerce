@@ -9,7 +9,7 @@ import { ItemI } from '../../../redux/reduxTypes';
 import { Ionicons, AntDesign } from '@expo/vector-icons';
 
 // Components
-import Block from '../../../components/Block';
+import Block from '../../../components/Block/Block';
 import RText from './../../../components/RText';
 
 type Props = {

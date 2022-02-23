@@ -1,6 +1,6 @@
 import { FlatList, StyleSheet } from 'react-native';
 import React from 'react';
-import Block from '../../components/Block';
+import Block from '../../components/Block/Block';
 import RText from '../../components/RText';
 import data from '../../utils/data';
 import CartItem from '../cart/components/CartItem';

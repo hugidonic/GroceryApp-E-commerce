@@ -6,29 +6,31 @@ import {
 	ScrollView,
 	StyleSheet,
 	Text,
+	TouchableOpacity,
 	View
 } from 'react-native';
 import React from 'react';
 // Components
-import Block from './../../components/Block';
+import Block from '../../components/Block/Block';
 import RText from './../../components/RText';
 import SearchBar from './../home/components/SearchBar';
 import data from '../../utils/data';
 // Types
 import { GroupI } from '../../redux/reduxTypes';
 import colors from './../../utils/colors';
+import { TabsStackScreenProps } from '../../routes/routeTypes';
 
 const {width} = Dimensions.get('screen')
 
-type Props = {};
-
-const ExploreScreen = (props: Props) => {
+const ExploreScreen = (props: TabsStackScreenProps) => {
 
   const renderGroup = (group: GroupI) => (
-    <Block style={styles.group} justify="center" align="center" color={group.color}>
-      <Image source={group.picture} style={styles.image} />
-      <RText bold large>{group.name}</RText>
-    </Block>
+    <TouchableOpacity onPress={() => props.navigation.navigate('Group', {group: group.name})}>
+      <Block style={styles.group} justify="center" align="center" color={group.color}>
+        <Image source={group.picture} style={styles.image} />
+        <RText bold large>{group.name}</RText>
+      </Block>
+    </TouchableOpacity>
   )
 
   

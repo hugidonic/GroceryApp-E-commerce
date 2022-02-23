@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import React from 'react';
-import Block from './../../../components/Block';
+import Block from '../../../components/Block/Block';
 import ProfileListItem from './ProfileListItem';
 import { useNavigation } from '@react-navigation/native';
 import { ProfileStackScreenProps } from '../../../routes/routeTypes';

@@ -10,7 +10,6 @@ import { ItemScreenOptionsType, MainStackParamListType, ProfileStackParamListTyp
 
 // Screens
 import ItemScreen from '../screens/item/ItemScreen';
-import GroupScreen from './../screens/group/GroupScreen';
 // Tabs stack
 import HomeScreen from '../screens/home/HomeScreen';
 import ExploreScreen from '../screens/explore/ExploreScreen';
@@ -21,7 +20,10 @@ import ProfileScreen from '../screens/profile/ProfileScreen';
 // Profile stack
 import OrdersScreen from './../screens/orders/OrdersScreen';
 import MyDetailsScreen from './../screens/MyDetails/MyDetailsScreen';
-import ItemScreenHeader from '../screens/item/components/ItemScreenHeader';
+
+// PLOP IMPORTS
+import GroupScreen from '../screens/group/GroupScreen';
+
 
 const MainStack = createNativeStackNavigator<MainStackParamListType>();
 const ProfileStack = createNativeStackNavigator<ProfileStackParamListType>();
@@ -35,7 +37,8 @@ const AppNavigator = () => {
           <MainStack.Screen name="TabsStack" component={BottomTabs} />
           <MainStack.Screen name="ProfileStack" component={ProfileStackScreens}/>
           <MainStack.Screen name="Item" options={ItemScreenOptions} component={ItemScreen}/>
-          <MainStack.Screen name="Group" options={{headerShown: true}} component={GroupScreen}/>
+          {/* // PLOP ADD SCREEN FOR Main */}
+          <MainStack.Screen name="Group" options={{headerShown: true}} component={ GroupScreen } />
         </MainStack.Navigator>
       
     </NavigationContainer>
@@ -46,7 +49,6 @@ export default AppNavigator;
 
 const ItemScreenOptions: ItemScreenOptionsType = {
   headerShown: false,
-  header: (props: NativeStackHeaderProps) => <ItemScreenHeader {...props} />,
 }
 
 const ProfileStackScreens = () => {
@@ -60,6 +62,9 @@ const ProfileStackScreens = () => {
       <ProfileStack.Screen name="Notifications" component={MyDetailsScreen} />
       <ProfileStack.Screen name="Help" component={MyDetailsScreen} />
       <ProfileStack.Screen name="About" component={MyDetailsScreen} />
+
+      {/* // PLOP ADD SCREEN FOR Profile */}
+      
     </ProfileStack.Navigator>
   )
 } 
@@ -93,7 +98,7 @@ const tabsScreenOptions: screenOptionsType = ({route}) => ({
       default:
         IconName = "md-home"
     }
-
+    // @ts-ignore
     return <Ionicons name={IconName} color={color} size={size} />
   }
 })
@@ -107,6 +112,7 @@ const BottomTabs = () => {
       <TabsStack.Screen name="Cart" component={CartScreen} />
       <TabsStack.Screen name="Favorite" component={FavoriteScreen} />
       <TabsStack.Screen name="Profile" component={ProfileScreen} />
+      {/* // PLOP ADD SCREEN FOR Tabs */}
       
     </TabsStack.Navigator>
   )
