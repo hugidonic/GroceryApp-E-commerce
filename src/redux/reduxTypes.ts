@@ -1,4 +1,4 @@
-export interface ItemI {
+export interface ProductI {
   name: string;
   description: string;
   price: number;
@@ -12,7 +12,7 @@ export interface GroupI {
 }
 
 export type GroupNamesType = 
-"Diary" |
+"Dairy" |
 "Oils" |
 "Drinks" |
 "Rice" |

@@ -15,6 +15,14 @@ interface BlockProps {
 	shadow?: boolean;
 	border?: boolean;
 
+	/**
+	 * Padding: Top Right Bottom Left
+	 */
+	padding?: [number, number, number, number];
+	/**
+	 * Margin: Top Right Bottom Left
+	 */
+	margin?: [number, number, number, number];
 	paddingHorizontal?: number;
 	paddingVertical?: number;
 	

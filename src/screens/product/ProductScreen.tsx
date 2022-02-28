@@ -1,31 +1,31 @@
 import { Dimensions, Image, StyleSheet } from 'react-native';
 import { AntDesign, Ionicons } from '@expo/vector-icons';
 import React from 'react';
-import Block from '../../components/Block/Block';
+import Block from '../../components/Block';
 import RText from '../../components/RText';
-import { ItemScreenProps } from '../../routes/routeTypes';
-import colors from './../../utils/colors';
-import PrimaryBtn from './../../components/PrimaryBtn';
-import ItemInfo from './components/ItemInfo';
-import ItemScreenHeader from './components/ItemScreenHeader';
+import { ProductScreenProps } from '../../routes/routeTypes';
+import colors from '../../utils/colors';
+import PrimaryBtn from '../../components/PrimaryBtn';
+import ProductInfo from './components/ProductInfo';
+import ProductScreenHeader from './components/ProductScreenHeader';
 
 type Props = {};
 
 const {height} = Dimensions.get('screen')
 
-const ItemScreen = (props: ItemScreenProps) => {
-	const { item } = props.route.params;
+const ProductScreen = (props: ProductScreenProps) => {
+	const { product } = props.route.params;
 	const goBack = props.navigation.goBack
 	
 	return (
 		<Block color={colors.white} flex>
-			<ItemScreenHeader goBack={goBack} />
+			<ProductScreenHeader goBack={goBack} />
 
 			<Block justify="center" align="center" style={{marginVertical: 15}}>
-				<Image source={item.picture} style={styles.picture} />
+				<Image source={product.picture} style={styles.picture} />
 			</Block>
 
-			<ItemInfo item={item} />
+			<ProductInfo product={product} />
 
 			<Block
 				justify="center"
@@ -43,7 +43,7 @@ const ItemScreen = (props: ItemScreenProps) => {
 	);
 };
 
-export default ItemScreen;
+export default ProductScreen;
 
 const PictureSize = height*0.25
 

@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import Block from '../../../components/Block/Block';
+import Block from '../../../components/Block';
 import RText from '../../../components/RText';
 import colors from '../../../utils/colors';
 

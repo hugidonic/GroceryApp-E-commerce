@@ -10,11 +10,12 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { TabsStackScreenProps } from '../../../routes/routeTypes';
 // Components
-import Block from '../../../components/Block/Block';
+import Block from '../../../components/Block';
 import RText from '../../../components/RText';
 // Utils
 import data from '../../../utils/data';
 import colors from './../../../utils/colors';
+import { GroupI } from '../../../redux/reduxTypes';
 
 const { width } = Dimensions.get('screen');
 
@@ -24,11 +25,8 @@ const GroupsList = (props: Props) => {
 
 	const nav = useNavigation<TabsStackScreenProps>()
 	
-	const renderItem = (group: {
-		name: string;
-		color: string;
-		picture: ReturnType<typeof require>;
-	}) => (
+	const renderItem = (group: GroupI
+		) => (
 		<TouchableOpacity
 			onPress={() => nav.navigation.navigate('Group', {group: group.name})}
 		>

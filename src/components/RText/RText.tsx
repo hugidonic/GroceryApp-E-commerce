@@ -1,24 +1,7 @@
 import { StyleSheet, Text, View, TextStyle } from 'react-native';
 import React from 'react';
-import colors from './../utils/colors';
-
-type Props = {
-	style?: TextStyle | TextStyle[];
-
-	light?: boolean;
-	bold?: boolean;
-	black?: boolean;
-
-	title?: boolean;
-	large?: boolean;
-	medium?: boolean;
-	small?: boolean;
-
-	color?: string;
-	children?: React.ReactNode | React.ReactElement;
-
-	[key: string]: any;
-};
+import RTextProps from './RText.props';
+import colors from '../../utils/colors';
 
 const RText = ({
   children,
@@ -35,7 +18,7 @@ const RText = ({
 
   color,
   ...rest 
-}: Props) => {
+}: RTextProps) => {
 
 	const textStyles: TextStyle = StyleSheet.flatten([
     {fontSize: 16, fontFamily: 'Roboto-Regular', color: colors.black},
@@ -50,10 +33,9 @@ const RText = ({
     large !== undefined && {fontSize: 22},
     medium !== undefined && {fontSize: 18},
     small !== undefined && {fontSize: 14},
-    
   ])
   
-	return <Text style={textStyles}>{children}</Text>;
+	return <Text style={textStyles} {...rest} >{children}</Text>;
 };
 
 export default RText;

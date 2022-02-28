@@ -1,6 +1,6 @@
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import Block from '../../../components/Block/Block';
+import Block from '../../../components/Block';
 
 const images = [
 	'https://www.konfik.ru/wa-data/public/photos/46/11/1146/1146.970.jpg',

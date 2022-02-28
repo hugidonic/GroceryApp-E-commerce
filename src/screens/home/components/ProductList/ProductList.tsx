@@ -1,24 +1,19 @@
 import { Dimensions, FlatList, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 // Custom components
-import Block from './Block/Block';
-import RText from './RText';
+import Block from '../../../../components/Block';
+import RText from '../../../../components/RText';
 // Components
-import colors from '../utils/colors';
-import Item from './Item';
+import Product from '../../../../components/Product';
 // Types
-import { ItemI } from '../redux/reduxTypes';
+import ProductListProps from './ProductList.props';
+import colors from '../../../../utils/colors';
 
 const { width } = Dimensions.get('screen');
 
-type Props = {
-	title: string,
-	data: ItemI[]
-};
-
-const ItemList = ({title, data}: Props) => {
+const ProductList = ({title, data}: ProductListProps) => {
 	return (
-		<Block>
+		<Block >
 			<Block row justify="space-between" align="center" style={{ marginVertical: 8 }}>
 				<RText black large>
 					{title}
@@ -29,22 +24,24 @@ const ItemList = ({title, data}: Props) => {
 
 			<FlatList
 				data={data}
-				renderItem={({ item }) => <Item item={item} />}
+				renderItem={({ item }) => (
+					<Product product={item} />
+				)}
 				keyExtractor={(item, idx) => idx.toString()}
 				horizontal
 				style={{
 					marginLeft: -20,
 					width
 				}}
-				ListHeaderComponent={() => <Block style={{ width: 20 }} />}
-				ListFooterComponent={() => <Block style={{ width: 20 }} />}
+				ListHeaderComponent={() => <Block style={{ width: 10 }} />}
+				ListFooterComponent={() => <Block style={{ width: 10 }} />}
 				showsHorizontalScrollIndicator={false}
-				ItemSeparatorComponent={() => <Block style={{ marginHorizontal: 10 }} />}
+				// ItemSeparatorComponent={() => <Block style={{ marginHorizontal: 10 }} />}
 			/>
 		</Block>
 	);
 };
 
-export default ItemList;
+export default ProductList;
 
 const styles = StyleSheet.create({});

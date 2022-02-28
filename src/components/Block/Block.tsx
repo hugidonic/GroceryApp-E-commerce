@@ -1,6 +1,6 @@
 import { StyleSheet, View, ViewStyle } from 'react-native';
 import React from 'react';
-import BlockProps from './Block.props'
+import BlockProps from './Block.props';
 
 const Block = ({
 	children,
@@ -13,10 +13,15 @@ const Block = ({
 	bRadius,
 	border,
 	color,
+
+	padding,
+	margin,
+
 	marginHorizontal,
 	marginVertical,
+
 	paddingHorizontal,
-	paddingVertical,
+	paddingVertical
 }: BlockProps) => {
 	const styles: ViewStyle = StyleSheet.flatten([
 		style,
@@ -27,8 +32,20 @@ const Block = ({
 		justify !== undefined && { justifyContent: justify },
 		align !== undefined && { alignItems: align },
 		color !== undefined && { backgroundColor: color },
-		row !== undefined && { flexDirection: 'row', },
+		row !== undefined && { flexDirection: 'row' },
 
+		padding !== undefined && {
+			paddingTop: padding[0],
+			paddingRight: padding[1],
+			paddingBottom: padding[2],
+			paddingLeft: padding[3]
+		},
+		margin !== undefined && {
+			marginTop: margin[0],
+			marginRight: margin[1],
+			marginBottom: margin[2],
+			marginLeft: margin[3]
+		},
 
 		paddingHorizontal !== undefined && { paddingHorizontal },
 		marginHorizontal !== undefined && { marginHorizontal },

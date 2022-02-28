@@ -1,15 +1,15 @@
 import { Image, StyleSheet, Text, View, Pressable } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import React from 'react';
-import { ItemI } from '../../../redux/reduxTypes';
-import Block from '../../../components/Block/Block';
+import { ProductI } from '../../../redux/reduxTypes';
+import Block from '../../../components/Block';
 import RText from '../../../components/RText';
 import OperationButton from './OperationButton';
 import colors from './../../../utils/colors';
 
 type Props = {
 	cartItem: {
-		item: ItemI;
+		product: ProductI;
 		count: number;
 	};
 };
@@ -26,7 +26,7 @@ const CartItem = ({ cartItem }: Props) => {
 	return (
 		<Block row color='#fff' shadow bRadius={20} style={styles.container}>
 			<Image
-				source={cartItem.item.picture}
+				source={cartItem.product.picture}
 				style={{
 					width: 100,
 					height: 100,
@@ -37,9 +37,9 @@ const CartItem = ({ cartItem }: Props) => {
 			<Block>
 				<Block style={{ marginBottom: 8 }}>
 					<RText black large>
-						{cartItem.item.name}
+						{cartItem.product.name}
 					</RText>
-					<RText color={colors.secondary}>{cartItem.item.description}</RText>
+					<RText color={colors.secondary}>{cartItem.product.description}</RText>
 				</Block>
 				<Block row>
 					<OperationButton func={decrement} type="Decrement" />

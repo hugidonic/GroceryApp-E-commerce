@@ -17,7 +17,14 @@ export default function(plop) {
 			},
 			{
 				type: 'add',
-				path: './src/components/{{pascalCase name}}/{{pascalCase name}}.props.ts'
+				path:
+					'./src/components/{{pascalCase name}}/{{pascalCase name}}.props.ts',
+				templateFile: './templates/ComponentProps.hbs'
+			},
+			{
+				type: 'add',
+				path: './src/components/{{pascalCase name}}/index.ts',
+				templateFile: `export {default} from './{{pascalCase name}}'`
 			}
 		]
 	});
@@ -42,6 +49,18 @@ export default function(plop) {
 				path:
 					'./src/screens/{{screenName}}/components/{{pascalCase name}}/{{pascalCase name}}.tsx',
 				templateFile: './templates/Component.hbs'
+			},
+			{
+				type: 'add',
+				path:
+					'./src/screens/{{screenName}}/components/{{pascalCase name}}/{{pascalCase name}}.props.ts',
+				templateFile: './templates/ComponentProps.hbs'
+			},
+			{
+				type: 'add',
+				path:
+					'./src/screens/{{screenName}}/components/{{pascalCase name}}/index.ts',
+				templateFile: `export {default} from './{{pascalCase name}}'`
 			}
 		]
 	});
@@ -101,5 +120,23 @@ export default function(plop) {
 
 			return actions;
 		}
+	});
+
+	plop.setGenerator('Model', {
+		description: 'Creates a MST model',
+		prompts: [
+			{
+				type: 'input',
+				name: 'name',
+				message: 'Model name:'
+			}
+		],
+		actions: [
+			{
+				type: 'add',
+				path: './src/models/{{pascalCase name}}/{{pascalCase name}}.ts',
+				templateFile: './templates/Model.hbs'
+			}
+		]
 	});
 }

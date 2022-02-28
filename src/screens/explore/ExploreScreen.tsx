@@ -11,8 +11,8 @@ import {
 } from 'react-native';
 import React from 'react';
 // Components
-import Block from '../../components/Block/Block';
-import RText from './../../components/RText';
+import Block from '../../components/Block';
+import RText from '../../components/RText';
 import SearchBar from './../home/components/SearchBar';
 import data from '../../utils/data';
 // Types

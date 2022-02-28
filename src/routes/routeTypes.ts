@@ -1,7 +1,7 @@
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 import { RouteProp, NavigatorScreenParams, CompositeScreenProps } from '@react-navigation/native';
 import { NativeStackNavigationOptions, NativeStackScreenProps } from '@react-navigation/native-stack';
-import { GroupI, GroupNamesType, ItemI } from '../redux/reduxTypes';
+import { GroupI, GroupNamesType, ProductI } from '../redux/reduxTypes';
 
 
 declare global {
@@ -15,7 +15,7 @@ declare global {
 export type MainStackParamListType = {
   TabsStack: NavigatorScreenParams<TabsStackParamListType>;
   ProfileStack: NavigatorScreenParams<ProfileStackParamListType>;
-  Item: {item: ItemI}
+  Product: {product: ProductI}
 
   // PLOP SCREENS FOR Main
   Group: {group: GroupNamesType};
@@ -54,9 +54,9 @@ export type TabsStackScreenProps = NativeStackScreenProps<
   MainStackParamListType,
   "TabsStack"
 >
-export type ItemScreenProps = NativeStackScreenProps<
+export type ProductScreenProps = NativeStackScreenProps<
   MainStackParamListType,
-  "Item"
+  "Product"
 >
 
 
@@ -67,7 +67,7 @@ export type screenOptionsType = BottomTabNavigationOptions | ((props: {
   navigation: any;
 }) => BottomTabNavigationOptions) | undefined
 
-export type ItemScreenOptionsType = NativeStackNavigationOptions | ((props: {
-  route: RouteProp<MainStackParamListType, "Item">;
+export type ProductScreenOptionsType = NativeStackNavigationOptions | ((props: {
+  route: RouteProp<MainStackParamListType, "Product">;
   navigation: any;
 }) => NativeStackNavigationOptions) | undefined

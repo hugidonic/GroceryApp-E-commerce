@@ -1,0 +1,13 @@
+import { Instance, SnapshotOut, types } from "mobx-state-tree"
+
+export const {{pascalCase name}}Model = types
+  .model("{{pascalCase name}}")
+  .props({})
+  .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
+  .actions((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
+
+type {{pascalCase name}}Type = Instance<typeof {{pascalCase name}}Model>
+export interface {{pascalCase name}} extends {{pascalCase name}}Type {}
+type {{pascalCase name}}SnapshotType = SnapshotOut<typeof {{pascalCase name}}Model>
+export interface {{pascalCase name}}Snapshot extends {{pascalCase name}}SnapshotType {}
+export const create{{pascalCase name}}DefaultModel = () => types.optional({{pascalCase name}}Model, {})

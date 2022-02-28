@@ -10,8 +10,8 @@ import RText from '../../components/RText';
 // Utils
 import data from '../../utils/data';
 import { GroupNamesType } from '../../redux/reduxTypes';
-import Item from '../../components/Item';
-import Block from '../../components/Block/Block';
+import Product from '../../components/Product';
+import Block from '../../components/Block';
 import colors from '../../utils/colors';
 
 const GroupScreen: FC<StackScreenProps<MainStackParamListType, 'Group'>> = (
@@ -20,23 +20,24 @@ const GroupScreen: FC<StackScreenProps<MainStackParamListType, 'Group'>> = (
 	const groupName: GroupNamesType = props.route.params.group;
 
 	return (
-		<Screen style={styles.container} backgroundColor={colors.white} preset="fixed">
+		<Screen
+			style={styles.container}
+			backgroundColor={colors.white}
+			preset="fixed"
+		>
 			<FlatList
 				data={data[groupName]}
 				renderItem={({ item }) => (
-					<Block style={{width: '48%'}}>
-						<Item flex item={item} />
-					</Block>
+					<Product flex product={item} />
 				)}
 				numColumns={2}
 				showsVerticalScrollIndicator={false}
 				keyExtractor={(item, idx) => idx.toString()}
 				style={{
-					paddingHorizontal: 20,
+					paddingHorizontal: 20
 				}}
 				columnWrapperStyle={{
 					justifyContent: 'space-between',
-					marginVertical: 10
 				}}
 			/>
 		</Screen>
@@ -47,6 +48,6 @@ export default GroupScreen;
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
+		flex: 1
 	}
 });

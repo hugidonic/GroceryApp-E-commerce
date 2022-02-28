@@ -4,16 +4,16 @@ import { StyleSheet } from 'react-native';
 import BottomSheet from '@gorhom/bottom-sheet';
 import ProgressCircle from 'react-native-progress-circle';
 // Utils
-import colors from './../../../utils/colors';
-import { ItemI } from '../../../redux/reduxTypes';
+import colors from '../../../utils/colors';
+import { ProductI } from '../../../redux/reduxTypes';
 import { Ionicons, AntDesign } from '@expo/vector-icons';
 
 // Components
-import Block from '../../../components/Block/Block';
-import RText from './../../../components/RText';
+import Block from '../../../components/Block';
+import RText from '../../../components/RText';
 
 type Props = {
-	item: ItemI;
+	product: ProductI;
 };
 
 const banana = {
@@ -28,7 +28,7 @@ const proteinPercentage = +(banana.protein / all * 100).toFixed(2)
 const fatsPercentage = +(banana.fats / all * 100).toFixed(2)
 const carbsPercentage = +(banana.carbs / all * 100).toFixed(2)
 
-const ItemInfo = ({ item }: Props) => {
+const ProductInfo = ({ product }: Props) => {
 	// ref
 	const bottomSheetRef = React.useRef<BottomSheet>(null);
 
@@ -54,7 +54,7 @@ const ItemInfo = ({ item }: Props) => {
 			>
 				<Block style={styles.price}>
 					<RText black medium color={colors.primary}>
-						${item.price}
+						${product.price}
 					</RText>
 				</Block>
 
@@ -70,7 +70,7 @@ const ItemInfo = ({ item }: Props) => {
 
 			<Block>
 				<RText black title>
-					{item.name}
+					{product.name}
 				</RText>
 				<Block row align="center" style={{ marginVertical: 15 }}>
 					<Block row align="center" style={{ marginRight: 40 }}>
@@ -140,7 +140,7 @@ const ItemInfo = ({ item }: Props) => {
 	);
 };
 
-export default ItemInfo;
+export default ProductInfo;
 
 const styles = StyleSheet.create({
 	price: {

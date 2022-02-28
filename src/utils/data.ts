@@ -1,14 +1,14 @@
-import { GroupI, ItemI } from "../redux/reduxTypes";
+import { GroupI, ProductI } from "../redux/reduxTypes";
 
 interface data {
   groups: GroupI[];
-  fruits: ItemI[];
-  vegetables: ItemI[];
-  Diary: ItemI[];
-  Oils: ItemI[];
-  Drinks: ItemI[];
-  Rice: ItemI[];
-  Sauces: ItemI[];
+  fruits: ProductI[];
+  vegetables: ProductI[];
+  Dairy: ProductI[];
+  Oils: ProductI[];
+  Drinks: ProductI[];
+  Rice: ProductI[];
+  Sauces: ProductI[];
 }
 
 
@@ -137,14 +137,14 @@ const data: data = {
       price: 4.99
     },
   ],
-  Diary: [],
+  Dairy: [],
   Oils: [],
   Drinks: [],
   Rice: [],
   Sauces: [],
 }
 
-data.Diary = [...data.fruits];
+data.Dairy = [...data.fruits];
 data.Oils = [...data.vegetables];
 data.Drinks = [...data.fruits];
 data.Rice = [...data.vegetables];

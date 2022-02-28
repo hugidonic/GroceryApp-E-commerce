@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View, Pressable, TouchableOpacity } from 'react-native';
 import React from 'react';
-import Block from '../../../components/Block/Block';
+import Block from '../../../components/Block';
 import { Ionicons, SimpleLineIcons } from '@expo/vector-icons';
 import colors from './../../../utils/colors';
-import RText from './../../../components/RText';
+import RText from '../../../components/RText';
 
 type Props = {
 	title: string;
